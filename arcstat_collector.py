@@ -122,4 +122,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-root@m50[/mnt/fire/tn_scripts]# 
