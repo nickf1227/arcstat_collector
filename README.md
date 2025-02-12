@@ -27,8 +27,8 @@ A Python script to collect and log ZFS Adaptive Replacement Cache (ARC) and L2AR
 Edit these variables in the script:
 
 # Configurable settings
-SAMPLING_INTERVAL = 30          # arcstat sampling interval in seconds
-SAMPLING_FREQUENCY = 300         # How often to collect samples in seconds
+SAMPLING_INTERVAL = 10          # arcstat sampling interval in seconds
+SAMPLING_FREQUENCY = 60         # How often to collect samples in seconds
 CSV_OUTPUT_PATH = "."           # Output directory for CSV file
 
 For now, columns include the below. I plan to expose more later. Please see https://openzfs.github.io/openzfs-docs/man/master/1/arcstat.1.html:
