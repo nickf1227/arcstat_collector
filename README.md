@@ -27,14 +27,13 @@ A Python script to collect and log ZFS Adaptive Replacement Cache (ARC) and L2AR
 ## Configuration
 Edit these variables in the script:
 
-python
-Copy
-SAMPLING_INTERVAL = 10   # arcstat collection window (seconds)
-SAMPLING_FREQUENCY = 30  # Time between samples (seconds)
-CSV_OUTPUT_PATH = "."    # Output directory for CSV file
-Output File (arcstat.csv)
-Columns include:
+# Configurable settings
+SAMPLING_INTERVAL = 30          # arcstat sampling interval in seconds
+SAMPLING_FREQUENCY = 300         # How often to collect samples in seconds
+CSV_OUTPUT_PATH = "."           # Output directory for CSV file
 
+For now, columns include the below. I plan to expose more later:
+```
 timestamp: Measurement time (YYYY-MM-DD HH:MM:SS )
 
 size (GB): Total ARC size
@@ -56,7 +55,7 @@ l2mfu%: L2ARC MFU (Most Frequently Used) percentage
 mfusz%: MFU size percentage
 
 mfugsz (GB): MFU ghost size
-
+```
 ## Troubleshooting
 Common Issues:
 
