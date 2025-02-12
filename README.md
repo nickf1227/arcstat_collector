@@ -32,7 +32,7 @@ SAMPLING_INTERVAL = 30          # arcstat sampling interval in seconds
 SAMPLING_FREQUENCY = 300         # How often to collect samples in seconds
 CSV_OUTPUT_PATH = "."           # Output directory for CSV file
 
-For now, columns include the below. I plan to expose more later:
+For now, columns include the below. I plan to expose more later. Please see https://openzfs.github.io/openzfs-docs/man/master/1/arcstat.1.html:
 ```
 timestamp: Measurement time (YYYY-MM-DD HH:MM:SS )
 
