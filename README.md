@@ -19,10 +19,9 @@ A Python script to collect and log ZFS Adaptive Replacement Cache (ARC) and L2AR
 ## Installation
 
 1. I have a seperate dataset in my pool `/mnt/tank/tn_scripts` that I use for this purpose, and I highly recommend you should as well.
-2. `git clone https://github.com/nickf1227/zpool-iostat-collector.git /mnt/tank/tn_scripts` Replace the path with where you want to store it on your system, and then run it.
-3. You can call the script by running `python3 /mnt/tank/tn_scripts/zpool-iostat-collector.py`
-4. If you have more than one pool you would like to monitor, you would need to copy the `zpool-iostat-collector.py` file. Something like this could work `cp /mnt/tank/tn_scripts/zpool-iostat-collector.py /mnt/tank/tn_scripts/zpool-iostat-collector-pool1.py && mv /mnt/tank/tn_scripts/zpool-iostat-collector.py /mnt/tank/tn_scripts/zpool-iostat-collector-pool2.py`
-5. Then you would have to configure them booth (see below) and call them both individually.
+2. `git clone https://github.com/nickf1227/arcstat_collector.git /mnt/tank/tn_scripts` Replace the path with where you want to store it on your system, and then run it.
+3. You can call the script by running `python3 /mnt/tank/tn_scripts/arcstat_collector/arcstat_collector.py`
+
 
 ## Configuration
 Edit these variables in the script:
