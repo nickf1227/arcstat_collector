@@ -14,36 +14,17 @@ A Python script to collect and log ZFS Adaptive Replacement Cache (ARC) and L2AR
 - Automatic unit conversion (bytes to GB)
 - Configurable sampling parameters
 
-## Prerequisites
 
-- Python 3.x
-- `arcstat` utility (part of ZFS on Linux/OpenZFS)
-- Subprocess access to run system commands
-- (Optional) Root privileges for arcstat if required by your system
 
 ## Installation
 
-1. Download the script:
-   ```bash
-   wget https://example.com/path/to/arcstat_monitor.py
-Make executable:
+1. I have a seperate dataset in my pool `/mnt/tank/tn_scripts` that I use for this purpose, and I highly recommend you should as well.
+2. `git clone https://github.com/nickf1227/zpool-iostat-collector.git /mnt/tank/tn_scripts` Replace the path with where you want to store it on your system, and then run it.
+3. You can call the script by running `python3 /mnt/tank/tn_scripts/zpool-iostat-collector.py`
+4. If you have more than one pool you would like to monitor, you would need to copy the `zpool-iostat-collector.py` file. Something like this could work `cp /mnt/tank/tn_scripts/zpool-iostat-collector.py /mnt/tank/tn_scripts/zpool-iostat-collector-pool1.py && mv /mnt/tank/tn_scripts/zpool-iostat-collector.py /mnt/tank/tn_scripts/zpool-iostat-collector-pool2.py`
+5. Then you would have to configure them booth (see below) and call them both individually.
 
-bash
-Copy
-chmod +x arcstat_monitor.py
-Usage
-bash
-Copy
-python3 arcstat_monitor.py
-The script will:
-
-Run continuously until interrupted (Ctrl+C)
-
-Create arcstat.csv in the current directory
-
-Collect data points every 30 seconds (configurable)
-
-Configuration
+## Configuration
 Edit these variables in the script:
 
 python
@@ -76,39 +57,9 @@ mfusz%: MFU size percentage
 
 mfugsz (GB): MFU ghost size
 
-Troubleshooting
+## Troubleshooting
 Common Issues:
 
 Permission Denied for arcstat
 
 Run with sudo: sudo python3 arcstat_monitor.py
-
-Configure sudoers file if needed
-
-Missing Fields in Output
-
-Verify arcstat version supports all required fields
-
-Check field names match your arcstat implementation
-
-CSV File Not Created
-
-Verify write permissions in output directory
-
-Check for existing file locks
-
-Ensure script has proper execution rights
-
-License
-MIT License - see LICENSE file
-
-Note: Field availability depends on your arcstat version. Verify supported fields with:
-
-bash
-Copy
-arcstat -h
-Sample CSV Output:
-
-Copy
-timestamp,size (GB),hit%,l2size (GB),l2hit%,l2mru%,mrusz%,mrugsz (GB),l2mfu%,mfusz%,mfugsz (GB)
-2023-10-15 14:30:00,12.34,94.7,39.33,0.0,15.2,25.1,0.01,84.8,74.9,0.02
