@@ -8,9 +8,9 @@ import time
 print("Starting arcstat script...")
 
 # Configurable settings
-SAMPLING_INTERVAL = 10          # arcstat sampling interval in seconds
+SAMPLING_INTERVAL = 30          # arcstat sampling interval in seconds
 SAMPLING_FREQUENCY = 60         # How often to collect samples in seconds
-CSV_OUTPUT_PATH = "."           # Output directory for CSV file
+CSV_OUTPUT_PATH = "/mnt/tank/tn_scripts"           # Output directory for CSV file
 
 # Updated CSV header with new fields
 csv_header = [
